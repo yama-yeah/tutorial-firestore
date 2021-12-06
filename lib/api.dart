@@ -14,8 +14,7 @@ class Api {
   Future<String> auth() async {
     String body = json.encode(user);
     String url = BASE_URL + "auth";
-    var raw =
-        await http.post(Uri.parse(url + 'login'), body: body, headers: headers);
+    var raw = await http.post(Uri.parse(url), body: body, headers: headers);
     return json2map(raw)['token'];
   }
 
